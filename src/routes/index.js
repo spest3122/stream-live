@@ -1,14 +1,32 @@
-const routes = [
+import Login from '../views/login'
+import Lobby from '../views/lobby'
+import Main from '../views/main'
+import App from '../App'
+
+const Routes = [
     {
-        //直播大廳
-        path: '/'
-    },
-    {
-        //直播主畫面
-        path: '/main'
-    },
-    {
-        //登入畫面
-        path: '/login'
-    },
+        component: App, 
+        routes: [
+            {
+                //直播大廳
+                path: '/',
+                exact: true,
+                component: Lobby
+            },
+            {
+                //直播主畫面
+                path: '/main',
+                exact: true,
+                component: Main
+            },
+            {
+                //登入畫面
+                path: '/login',
+                exact: true,
+                component: Login
+            },
+        ]
+    }
 ]
+
+export default Routes
