@@ -1,11 +1,18 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
 import { renderRoutes } from 'react-router-config';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import CentralContext from './tool/central' 
 
 
 function App({ route }) {
   const history = useHistory();
+  const [isLogin, setIsLogin] = useState(false)
+
+  const toggleIsLogin = () => {
+    setIsLogin(!isLogin)
+  }
+
   const goLobby = () => {
     history.push('/')
   }
@@ -15,20 +22,20 @@ function App({ route }) {
   const goLogin = () => {
     history.push('/login')
   }
+  const goBack = () => {
+    history.goBack();
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div className="App-switch">
-          <button onClick={goLobby}>Lobby</button>
-          <button onClick={goMain}>Main</button>
-          <button onClick={goLogin}>Login</button>
-        </div>
+      <div className="App-switch">
+        <button onClick={goBack}>GoBack</button>
+        <button onClick={goLobby}>Lobby</button>
+        <button onClick={goMain}>Main</button>
+        <button onClick={goLogin}>Login</button>
+      </div>
+      <CentralContext.Provider value={{ isLogin ,toggleIsLogin }}>
         {renderRoutes(route.routes)}
-      </header>
+      </CentralContext.Provider>
     </div>
   );
 }

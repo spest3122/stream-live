@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import CentralContext from '../../tool/central' 
 
-const Login = () => {
-
+const Login = props => {
+    const loginContext = useContext(CentralContext)
     return (
-        <div>Login</div>
+        <div>
+            {loginContext.isLogin.toString()}
+            <button onClick={loginContext.toggleIsLogin}>ddd</button>
+        </div>
+        
     )
 }
 
