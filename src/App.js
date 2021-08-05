@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './App.css';
+import './App.scss';
 import { renderRoutes } from 'react-router-config';
 import { useHistory } from 'react-router-dom';
 import CentralContext from './tool/central' 
@@ -10,7 +10,7 @@ function App({ route }) {
   const [isLogin, setIsLogin] = useState(false)
 
   const toggleIsLogin = () => {
-    setIsLogin(!isLogin)
+    setIsLogin((prev) => !prev)
   }
 
   const goLobby = () => {
@@ -27,12 +27,12 @@ function App({ route }) {
   }
   return (
     <div className="App">
-      <div className="App-switch">
+      {/* <div className="App-switch">
         <button onClick={goBack}>GoBack</button>
         <button onClick={goLobby}>Lobby</button>
         <button onClick={goMain}>Main</button>
         <button onClick={goLogin}>Login</button>
-      </div>
+      </div> */}
       <CentralContext.Provider value={{ isLogin ,toggleIsLogin }}>
         {renderRoutes(route.routes)}
       </CentralContext.Provider>
