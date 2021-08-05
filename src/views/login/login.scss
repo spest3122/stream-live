@@ -1,0 +1,17 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1em;
+    .login-page-content {
+        margin-top: 3em;
+        .login-page-inputs {
+            display: flex;
+            flex-direction: column;
+        }
+        .login-page-buttons {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

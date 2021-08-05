@@ -1,12 +1,6 @@
 @import '../src/tool/reset.scss';
 
-html, body, #root {
-  height: 100%;
-}
-
-.App {
-  background-color: #282c34;
-  color: white;
+html, body, #root, .App {
   height: 100%;
 }
 
