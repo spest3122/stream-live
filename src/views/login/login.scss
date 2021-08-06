@@ -1,17 +1,66 @@
+$iconSize: 24px;
+
 .login-page {
     display: flex;
     flex-direction: column;
-    height: 100%;
     padding: 1em;
+    .login-page-header {
+        .login-page-header-back {
+            width: $iconSize;
+            height: $iconSize;
+        }
+    }
     .login-page-content {
         margin-top: 3em;
+        .login-page-logo {
+            height: 180px;
+            width: 350px;
+            margin: 0 auto;
+        }
         .login-page-inputs {
             display: flex;
             flex-direction: column;
+            margin-bottom: 3em;
+            .login-page-input {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1em;
+                input {
+                    border: none;
+                    border-bottom: 1px solid black;
+                    outline: none;
+                    padding: 8px 4px;
+                    margin-left: 4px;
+                }
+                .input-icon {
+                    width: $iconSize;
+                    height: $iconSize;
+                }
+            }
+            
         }
         .login-page-buttons {
             display: flex;
             justify-content: center;
+            
+            button {
+                border: none;
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 8px;
+                color: white;
+                min-width: 80px;
+            }
+            .login-page-button {
+                margin-right: 10px;
+            }
+            .button-color-info {
+                background-color: #0dcaf0;
+            }
+            .button-color-primary {
+                background-color: #0d6efd;
+            }
         }
     }
 }
