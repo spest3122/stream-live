@@ -6,15 +6,14 @@ $iconSize: 24px;
     padding: 1em;
     .login-page-header {
         .login-page-header-back {
-            width: $iconSize;
-            height: $iconSize;
+            font-size: $iconSize;
         }
     }
     .login-page-content {
         margin-top: 3em;
         .login-page-logo {
             height: 180px;
-            width: 350px;
+            width: 300px;
             margin: 0 auto;
         }
         .login-page-inputs {
@@ -34,8 +33,7 @@ $iconSize: 24px;
                     margin-left: 4px;
                 }
                 .input-icon {
-                    width: $iconSize;
-                    height: $iconSize;
+                    font-size: $iconSize;
                 }
             }
             

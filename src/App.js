@@ -22,13 +22,9 @@ function App({ route }) {
   const goLogin = () => {
     history.push('/login')
   }
-  const goBack = () => {
-    history.goBack();
-  }
   return (
     <div className="App">
       {/* <div className="App-switch">
-        <button onClick={goBack}>GoBack</button>
         <button onClick={goLobby}>Lobby</button>
         <button onClick={goMain}>Main</button>
         <button onClick={goLogin}>Login</button>
