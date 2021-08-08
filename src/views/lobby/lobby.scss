@@ -1,0 +1,26 @@
+$iconSize: 24px;
+
+.lobby-page {
+    display: flex;
+    flex-direction: column;
+    .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: black;
+        padding: 0.6em;
+        .header-logo {
+            width: 65px;
+            height: 24px;
+        }
+        .header-right {
+            .header-icon {
+                font-size: $iconSize;
+                fill: white;
+            }
+        }
+    }
+    .content {
+    }
+}
