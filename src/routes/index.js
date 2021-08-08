@@ -15,7 +15,7 @@ const Routes = [
             },
             {
                 //直播主畫面
-                path: '/main',
+                path: '/main/:id',
                 exact: true,
                 component: Main
             },
