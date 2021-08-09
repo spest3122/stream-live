@@ -3,6 +3,10 @@
 html, body, #root, .App {
   height: 100%;
 }
+body {
+  overflow: hidden;
+  max-height: 100%;
+}
 
 .App-switch {
   display: flex;
