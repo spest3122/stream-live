@@ -13,7 +13,6 @@ const Lobby = () => {
         setLiveHeight(window.screen.height - lobbyPageRef.current.clientHeight)
         return () => {}
     }, [])
-    // let liveContentHeight = 
     const goLogin = () => {
         history.push('/login')
     }
@@ -56,7 +55,11 @@ const Lobby = () => {
             <article className="lobby-live" style={{height: liveHeight}}>
                 <ul className="live-ul">
                     { liveList.map((item, index) => (
-                        <li className="live-li" key={'live'+item.id}>
+                        <li 
+                            className="live-li" 
+                            key={'live'+item.id} 
+                            onClick={() => history.push('/main/'+item.id)}
+                        >
                             <div className="li-image"></div>
                             <p className="li-text">{item.text}</p>
                         </li>
