@@ -24,6 +24,12 @@ $iconSize: 24px;
     .content {
         display: flex;
         flex-direction: column;
+        .content-carousel {
+            .carousel-image{
+                height: 225px;
+                width: 100%;
+            }
+        }
         .content-tabsection{
             .content-nav {
                 ul {
@@ -53,11 +59,9 @@ $iconSize: 24px;
 }
 .lobby-live {
     overflow: auto;
-    background-color: yellow;
     .live-ul {
         display: flex;
         flex-wrap: wrap;
-        
         .live-li {
             width: calc(50% - 1px);
             border-right: 1px solid black;

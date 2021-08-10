@@ -31,9 +31,10 @@ const CarouselSection = () => {
                 autoPlay={true}
                 infiniteLoop={true}
                 onClickItem={(index, item) => history.push('/main/'+item.props.id)}
+                dynamicHeight={false}
             >
                 {data.map((item) => (
-                    <img src={item.img} key={'key'+item.id} id={item.id}></img>
+                    <img className="carousel-image" src={item.img} key={'key'+item.id} id={item.id}></img>
                 ))}
             </Carousel>
         </section>

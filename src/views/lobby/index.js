@@ -10,7 +10,7 @@ const Lobby = () => {
     const lobbyPageRef = useRef(null)
     const [liveHeight, setLiveHeight] = useState(0)
     useEffect(() => {
-        setLiveHeight(window.screen.availHeight - lobbyPageRef.current.offsetHeight)
+        setLiveHeight(window.screen.height - lobbyPageRef.current.clientHeight)
         return () => {}
     }, [])
     // let liveContentHeight = 
