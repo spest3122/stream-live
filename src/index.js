@@ -8,7 +8,7 @@ import { renderRoutes } from "react-router-config";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      {renderRoutes(Routes)}
+        {renderRoutes(Routes)}
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
