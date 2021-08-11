@@ -1,5 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
+import CentralContext from '../../tool/central'
 import Header from './header/Header'
 import './lobby.scss'
 import CarouselSection from './carousel/Carousel'
@@ -8,6 +9,7 @@ import TabSection from './tabsection/TabSection'
 const Lobby = () => {
     const history = useHistory()
     const lobbyPageRef = useRef(null)
+    const { isLogin } = useContext(CentralContext)
     const [liveHeight, setLiveHeight] = useState(0)
     useEffect(() => {
         setLiveHeight(window.screen.height - lobbyPageRef.current.clientHeight)
@@ -46,7 +48,7 @@ const Lobby = () => {
     return (
         <>
             <main ref={lobbyPageRef} className="lobby-page">
-                <Header onGoLogin={goLogin}/>
+                <Header onGoLogin={goLogin} isLogin={isLogin}/>
                 <main className="content">
                     <CarouselSection />
                     <TabSection />

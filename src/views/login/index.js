@@ -10,6 +10,9 @@ import Button from './common/button'
 const Login = props => {
     const history = useHistory();
     const { isLogin, toggleIsLogin } = useContext(CentralContext)
+    if(isLogin){
+        history.goBack();
+    }
     return (
         <main className="login-page">
             <header className="login-page-header">
@@ -34,7 +37,7 @@ const Login = props => {
                 </div>
                 <div className="login-page-buttons">
                     <Button buttonName="Register" bgColor="button-color-info"/>
-                    <Button buttonName="Login" bgColor="button-color-primary"/>
+                    <Button buttonName="Login" bgColor="button-color-primary" loginFun={() => toggleIsLogin()}/>
                 </div>
             </main>
         </main>
