@@ -5,14 +5,23 @@ import CentralContext from './tool/central'
 
 
 function App({ route }) {
-  const [isLogin, setIsLogin] = useState(false)
+  const [ authData, setAuthData ] = useState({
+    name: '',
+    isLogin: false
+  })
 
-  const toggleIsLogin = () => {
-    setIsLogin((prev) => !prev)
+  const setUpAuthData = (data) => {
+    setAuthData({name: data.name, isLogin: true});
   }
+
+  const data = {
+    authData,
+    setUpAuthData
+  }
+
   return (
     <div className="App">
-      <CentralContext.Provider value={{ isLogin ,toggleIsLogin }}>
+      <CentralContext.Provider value={data}>
         {renderRoutes(route.routes)}
       </CentralContext.Provider>
     </div>

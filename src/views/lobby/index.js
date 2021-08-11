@@ -9,7 +9,7 @@ import TabSection from './tabsection/TabSection'
 const Lobby = () => {
     const history = useHistory()
     const lobbyPageRef = useRef(null)
-    const { isLogin } = useContext(CentralContext)
+    const { authData } = useContext(CentralContext)
     const [liveHeight, setLiveHeight] = useState(0)
     useEffect(() => {
         setLiveHeight(window.screen.height - lobbyPageRef.current.clientHeight)
@@ -48,7 +48,7 @@ const Lobby = () => {
     return (
         <>
             <main ref={lobbyPageRef} className="lobby-page">
-                <Header onGoLogin={goLogin} isLogin={isLogin}/>
+                <Header onGoLogin={goLogin} authData={authData}/>
                 <main className="content">
                     <CarouselSection />
                     <TabSection />
