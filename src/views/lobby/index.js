@@ -5,6 +5,10 @@ import Header from './header/Header'
 import './lobby.scss'
 import CarouselSection from './carousel/Carousel'
 import TabSection from './tabsection/TabSection'
+import Live1 from '../../static/image/live/live1.png'
+import Live2 from '../../static/image/live/live2.png'
+import Live3 from '../../static/image/live/live3.png'
+import Live4 from '../../static/image/live/live4.png'
 
 const Lobby = () => {
     const history = useHistory()
@@ -22,26 +26,32 @@ const Lobby = () => {
         {
             id: 1,
             text: '熱門',
+            source: Live1,
         },
         {
             id: 2,
             text: '角色',
+            source: Live2,
         },
         {
             id: 3,
             text: '動作',
+            source: Live3,
         },
         {
             id: 4,
             text: '戰略',
+            source: Live4,
         },
         {
             id: 5,
             text: '動作',
+            source: Live2,
         },
         {
             id: 6,
             text: '戰略',
+            source: Live4, 
         },
     ]
 
@@ -56,16 +66,17 @@ const Lobby = () => {
             </main>
             <article className="lobby-live" style={{height: liveHeight}}>
                 <ul className="live-ul">
-                    { liveList.map((item, index) => (
-                        <li 
+                    { liveList.map((item, index) => {
+                        let imagePath = `../../static/live/live${item.imageID}.png`
+                        return (<li 
                             className="live-li" 
                             key={'live'+item.id} 
                             onClick={() => history.push('/main/'+item.id)}
                         >
-                            <div className="li-image"></div>
+                            <img className="li-image" src={item.source} alt="image" />
                             <p className="li-text">{item.text}</p>
-                        </li>
-                    )) }
+                        </li> )
+                    }) }
 
                 </ul>
             </article>

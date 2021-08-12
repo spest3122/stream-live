@@ -65,18 +65,22 @@ $iconSize: 24px;
         flex-wrap: wrap;
         .live-li {
             width: calc(50% - 1px);
-            border-right: 1px solid black;
             height: 250px;
             display: flex;
             flex-direction: column;
             background-color: steelblue;
             .li-image {
-                flex: 1;
+                height: 250px - 20px;
             }
             .li-text {
                 background-color: teal;
-                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 color: white;
+                height: 20px;
+                line-height: 14px;
+                font-size: 14px;
             }
         }
     }
