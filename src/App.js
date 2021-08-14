@@ -3,6 +3,7 @@ import './App.scss';
 import { renderRoutes } from 'react-router-config';
 import CentralContext from './tool/central'
 import PendingRouteLoader from './routes/loader'
+import { useHistory } from 'react-router-dom';
 
 
 function App({ route }) {
@@ -10,9 +11,11 @@ function App({ route }) {
     name: '',
     isLogin: false
   })
+  const history = useHistory();
 
   const setUpAuthData = (data) => {
     setAuthData({name: data.name, isLogin: true});
+    history.replace('/')
   }
 
   const data = {
@@ -24,7 +27,7 @@ function App({ route }) {
     <div className="App">
       <CentralContext.Provider value={data}>
         <PendingRouteLoader routes={route.routes}>
-        {renderRoutes(route.routes)}
+          {renderRoutes(route.routes)}
         </PendingRouteLoader>
       </CentralContext.Provider>
     </div>
