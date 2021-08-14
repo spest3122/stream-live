@@ -67,13 +67,12 @@ const Lobby = () => {
             <article className="lobby-live" style={{height: liveHeight}}>
                 <ul className="live-ul">
                     { liveList.map((item, index) => {
-                        let imagePath = `../../static/live/live${item.imageID}.png`
                         return (<li 
                             className="live-li" 
                             key={'live'+item.id} 
                             onClick={() => history.push('/main/'+item.id)}
                         >
-                            <img className="li-image" src={item.source} alt="image" />
+                            <img className="li-image" src={item.source} alt="live" />
                             <p className="li-text">{item.text}</p>
                         </li> )
                     }) }

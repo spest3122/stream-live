@@ -34,7 +34,7 @@ const CarouselSection = () => {
                 dynamicHeight={false}
             >
                 {data.map((item) => (
-                    <img className="carousel-image" src={item.img} key={'key'+item.id} id={item.id}></img>
+                    <img alt={'carousel'+item.id} className="carousel-image" src={item.img} key={'key'+item.id} id={item.id}></img>
                 ))}
             </Carousel>
         </section>

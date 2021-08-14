@@ -1,11 +1,10 @@
 import React from 'react'
 import './main.scss'
 import { FaAngleLeft, FaBars, FaArrowAltCircleRight } from 'react-icons/fa'
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Main = () => {
     const history = useHistory()
-    // const { id } = useParams()
     return (
         <main className="main-page">
             <header className="header">
